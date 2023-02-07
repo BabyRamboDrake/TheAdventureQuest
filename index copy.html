@@ -11,18 +11,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="mainEl">
-        <div id="input">
-            <h1>ADVENTURE QUEST</h1>
-            <input type="text" id="quest-input">
-            <button id="add-quest" onclick="addQuest()">ADD QUEST</button>
-            <div id="pot">
-                <button id="pull-quest" onclick="pullQuest()"></button>
+    <div id="omega">
+        <div id="mainEl">
+            <div id="input">
+                <h1>ADVENTURE QUEST</h1>
+                <input type="text" id="quest-input">
+                <button id="add-quest" onclick="addQuest()">ADD QUEST</button>
+                <div id="pot">
+                    <button id="pull-quest" onclick="pullQuest()"></button>
+                </div>
             </div>
+            <div id="selected-quest"></div>    
+            <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
         </div>
-        <div id="selected-quest"></div>    
-    </div>
 
+        <div id="secondEl">
+            <div id="output">
+                <div id="points">0</div>
+            </div>    
+        </div>    
+    </div>
     <script src="script.js"></script>
 </body>
 </html> 

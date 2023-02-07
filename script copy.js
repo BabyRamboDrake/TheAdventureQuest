@@ -24,3 +24,17 @@ pullQuestBtn.addEventListener("click", function pullQuest() {
         selectedQuestDiv.innerHTML = "Find new Quest";
     }
 });
+
+const completeQuestButton = document.querySelector("#complete-quest");
+
+completeQuestButton.addEventListener("click", function completeQuest() {
+  const selectedQuest = document.querySelector("#selected-quest");
+  if (selectedQuest.textContent) {
+    // Award the points
+    const currentPoints = parseInt(document.querySelector("#points").textContent);
+    document.querySelector("#points").textContent = currentPoints + 10;
+
+    // Remove the selected quest
+    selectedQuest.textContent = "";
+  }
+});
