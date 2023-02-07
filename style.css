@@ -1,0 +1,188 @@
+
+@font-face {
+    font-family: fantasyfont;
+    src: url(IMG/LifeCraft_Font.ttf);
+}
+
+body {
+
+    font-family: fantasyfont;
+    background: #0c0e14;
+    background-size: cover;
+    color: white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0px 100px 0px;
+
+}
+
+#omega {
+
+    display: flex;
+    align-items: center;
+}
+
+
+#mainEl {
+
+    background: #14161c;
+    padding: 100px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+
+
+}
+
+
+
+#input {
+
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+
+}
+
+#quest-input {
+    margin-bottom: 30px;
+    background: #0c0e15;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-family: fantasyfont;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+
+
+}
+
+#pot {
+    background-image: url(IMG/pot.webp);
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px 0px 0px;
+}
+
+#add-quest, #pull-quest, #complete-quest {
+
+    width: 100px;
+    height: 50px;
+    font-family: fantasyfont;
+    border: none;
+    color: white;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+#add-quest:hover, #pull-quest:hover, #complete-quest:hover {
+
+
+    cursor: pointer;
+    transform: scale(1.1);
+
+
+
+    }
+
+#add-quest:active, #pull-quest:active, #complete-quest:active {
+
+    transform: scale(0.96 );
+
+
+    
+        }
+    
+
+#pull-quest {
+
+    margin: 135px 5px 0px 0px;
+    background-image: url(IMG/Button.png);
+    background-size: cover;
+    opacity: 0.2;
+    width: 99px;
+    height: 99px;
+
+}
+
+#add-quest {
+
+    background-image: url(IMG/Button.png);
+    background-size: cover;
+    background-position: top;
+    color: #c6faef;
+    font-weight: 900;
+}
+
+
+h1 {
+
+    font-size: 50px;
+    margin: 0px 0px 100px 0px;
+}
+
+
+#selected-quest {
+
+    background: #0c0e14 ;
+    text-align: center;
+    margin: 80px 0px 0px 0px;
+    padding: 80px 10px 80px 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#complete-quest {
+
+    background-image: url(IMG/Button.png);
+    background-size: cover;
+    background-position: top;
+    color: #c6faef;
+    font-weight: 900;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: 50px auto 0px auto;
+    font-family: fantasyfont;
+    font-size: 20px;
+
+
+
+}
+
+
+#secondEl {
+
+    width: 300px;
+    height: 300px;
+    background: #14161c;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 0px 0px 100px;
+    display: block;
+    float: right;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+#points {
+
+    font-size: 40px;
+}
