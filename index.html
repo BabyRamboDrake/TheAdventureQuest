@@ -12,6 +12,15 @@
 </head>
 <body>
     <div id="omega">
+        <div id="firstEl">
+            <div id="output">
+                <div id="level-display">LEVEL: <span id="level">1</span></div>
+                <div id="experience-bar">
+                <div id="experience-points"></div>
+            </div>
+                <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
+            </div>    
+        </div> 
         <div id="mainEl">
             <div id="input">
                 <h1>ADVENTURE QUEST</h1>
@@ -23,13 +32,26 @@
                 </div>
             </div> 
         </div>
+        <div id="thirdEl">
+            <h1 id="inventory-display">FORGESTEAD</h1>
+                <div class="app-icons">
+                    <a href="bank.html">
+                    <div class="icons" id="bank"></div>
+                    </a>
+                    <div class="icons" id="quests"></div>
+                </div>
+                <div class="app-icons">
+                    <div class="icons" id="stats"></div>
+                    <div class="icons" id="wisdom"></div>
+                </div>
+                <div class="app-icons">
+                    <div class="icons" id="vendor"></div>
+                    <div class="icons" id="gear"></div>
+                </div>
 
-        <div id="secondEl">
-            <div id="output">
-                <div id="points">0</div>
-                <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
-            </div>    
-        </div>    
+                
+
+        </div>   
     </div>
     <script src="script.js"></script>
 </body>

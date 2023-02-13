@@ -4,16 +4,24 @@
     src: url(IMG/LifeCraft_Font.ttf);
 }
 
+
+:root {
+
+    --primary:#130d14;
+    --secondary: #0c0221; 
+}
+
+
 body {
 
     font-family: fantasyfont;
-    background: #0c0e14;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
     background-size: cover;
     color: white ;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px 0px 100px 0px;
+    margin: 0px 0px 0px 0px;
 
 }
 
@@ -21,17 +29,22 @@ body {
 
     display: flex;
     align-items: center;
+    justify-content: center;
+
 }
 
 
 #mainEl {
-
+    width: 300px;
+    height: 500px;
     background: #14161c;
     padding: 100px;
     border: none;
     border-radius: 10px;
     display: block;
-    margin: 0 auto;
+    margin: 25px 0px 0px 0px;
+    box-shadow:#000000 0px 0px 100px 20px;
+   
 
 
 }
@@ -72,6 +85,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0px 0px 0px;
+    
 }
 
 #add-quest, #pull-quest, #complete-quest {
@@ -128,7 +142,7 @@ body {
 
 h1 {
 
-    font-size: 50px;
+    font-size: 40px;
     margin: 0px 0px 100px 0px;
 }
 
@@ -142,6 +156,8 @@ h1 {
     height: 50px;
     border-radius: 10px;
     font-size: 25px;
+    padding: 15px 5px 5px 5px;
+    box-shadow: #0066ff31 0px 0px 100px 10px;
 }
 
 #complete-quest {
@@ -156,7 +172,7 @@ h1 {
     border: none;
     border-radius: 10px;
     display: block;
-    margin: 50px auto 0px auto;
+    margin: 40px auto 0px auto;
     font-family: fantasyfont;
     font-size: 20px;
 
@@ -165,19 +181,21 @@ h1 {
 }
 
 
-#secondEl {
+#firstEl {
 
     width: 300px;
     height: 300px;
     background: #14161c;
     border: none;
     border-radius: 10px;
-    margin: 0px 0px 0px 100px;
+    margin: 0px 100px 0px 0px;
     width: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
+    box-shadow: #000000 0px 0px 100px 20px;
+    padding: 50px 0px 0px 0px;
 
     
 }
@@ -190,7 +208,91 @@ h1 {
     flex-direction: column;
 }
 
-#points {
+#level-display, #inventory-display {
 
-    font-size: 40px;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
+
+#experience-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #0d0e15;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px 0px 0px 0px;
+  }
+  
+  #experience-points {
+    width: 0%;
+    height: 100%;
+    background-color: #00fffb;
+    box-shadow: 0px 0px 20px  #00fffb;
+    transition: width 0.5s;
+  }
+
+  #points {
+    font-size: 30px;
+  }
+
+  #thirdEl {
+    width: 300px;
+    height: 300px;
+    background: #14161c;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 0px 0px 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    box-shadow: #000000 0px 0px 100px 20px;
+    padding: 50px 0px 0px 0px;
+
+  }
+
+  
+  .app-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: row;
+    border: red 10px;
+    padding: 0px 0px 0px 0px;
+  }
+
+ 
+
+  .icons {
+
+    width: 60px;
+    height: 60px;
+    margin: 0px 20px 0px 20px;
+    transition: transform 0.2s ease;
+  }
+ 
+  
+  #bank {
+
+    background-image: url(IMG/QustIconVQ.png);
+    background-size: cover;
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+  }
+
+  #quests {
+    background-image: url(IMG/Quest-icon.png);
+    background-size: cover;
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+  }
+
+.icons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.icons:active {
+
+    transform: scale(0.96);
+}
+
