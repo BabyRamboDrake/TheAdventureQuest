@@ -67,7 +67,9 @@ function switchMode(mode) {
   function startTimer() {
     let { total } = timer.remainingTime;
     const endTime = Date.parse(new Date()) + total * 1000;
-
+  
+    let account = 0; // initialize account balance
+  
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
     mainButton.classList.add('active');
@@ -76,10 +78,13 @@ function switchMode(mode) {
       timer.remainingTime = getRemainingTime(endTime);
       updateClock();
   
+      // add 585/60 to the account balance every minute
+      account += 585/60;
+  
       total = timer.remainingTime.total;
       if (total <= 0) {
         clearInterval(interval);
-
+  
         switch (timer.mode) {
           case 'pomodoro':
             if (timer.sessions % timer.longBreakInterval === 0) {
@@ -97,6 +102,14 @@ function switchMode(mode) {
         startTimer();
       }
     }, 1000);
+  
+    setInterval(function() {
+      // update the account balance in the UI every minute
+      let accountElement = document.getElementById('js-account-balance');
+      accountElement.textContent = account.toFixed(2);
+      //save the account balance to localStorage
+      localStorage.setItem('accountBalance', account.toFixed(2));
+    }, 60000); // execute this function every minute (60000 milliseconds)
   }
 
   function stopTimer() {
@@ -122,5 +135,13 @@ function switchMode(mode) {
 
 document.addEventListener('DOMContentLoaded', () => {
     switchMode('pomodoro');
-  });
+
+    // retrieve the account balance from localStorage
+  let accountBalance = localStorage.getItem('accountBalance');
+  if (accountBalance) {
+    let accountElement = document.getElementById('js-account-balance');
+    accountElement.textContent = accountBalance;
+  }
+});
+
 
