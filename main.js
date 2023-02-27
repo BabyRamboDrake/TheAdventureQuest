@@ -64,11 +64,13 @@ function switchMode(mode) {
     };
   }
 
+  let interval;
+
   function startTimer() {
     let { total } = timer.remainingTime;
     const endTime = Date.parse(new Date()) + total * 1000;
   
-    let account = 0; // initialize account balance
+    let account = parseFloat(localStorage.getItem('accountBalance')) || 0; 
   
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
@@ -102,14 +104,16 @@ function switchMode(mode) {
       }
     }, 1000);
   
-    setInterval(function() {
-      account += 466/60;
-      // update the account balance in the UI every minute
-      let accountElement = document.getElementById('js-account-balance');
-      accountElement.textContent = account.toFixed(2);
-      //save the account balance to localStorage
-      localStorage.setItem('accountBalance', account.toFixed(2));
-    }, 60000); // execute this function every minute (60000 milliseconds)
+    const accountInterval = setInterval(function() {
+      if (mainButton.dataset.action === 'stop') {
+        account += 466/60;
+        // update the account balance in the UI every minute
+        let accountElement = document.getElementById('js-account-balance');
+        accountElement.textContent = Math.floor(account);
+        //save the account balance to localStorage
+        localStorage.setItem('accountBalance', account.toFixed(2));
+      }
+    }, 60000);
   }
 
   function stopTimer() {
@@ -140,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let accountBalance = localStorage.getItem('accountBalance');
   if (accountBalance) {
     let accountElement = document.getElementById('js-account-balance');
-    accountElement.textContent = accountBalance;
+    accountElement.textContent = Math.floor(accountBalance);
   }
 });
 
