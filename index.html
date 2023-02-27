@@ -4,6 +4,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +15,36 @@
 </head>
 <body>
     <div id="omega">
-        <div id="firstEl">
-            <div id="output">
-                <div id="level-display">LEVEL: <span id="level">1</span></div>
-                <div id="experience-bar">
-                <div id="experience-points"></div>
+        <div id="firstContainer">
+            <div id="firstEl">
+                <div></div>
+                <div id="output">
+                    <div id="level-display">LEVEL: <span id="level">1</span></div>
+                    <div id="experience-bar">
+                    <div id="experience-points"></div>
+                </div>
+                    <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
+                </div>    
             </div>
-                <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
-            </div>    
+            <div id="timerEl">
+                <div id="timer">
+                    <div id="minutes">00</div>
+                    <div>:</div>
+                    <div id="seconds">00</div>
+                </div>
+                <div id="button-container">
+                    <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+                        <span class="material-symbols-outlined">
+                            play_arrow
+                            </span>
+                    </button>
+                    <button type="button" class="timer__btn timer__btn--reset">
+                        <span class="material-symbols-outlined" id="hourglass">
+                            hourglass_full
+                            </span>
+                    </button>
+                </div>
+            </div>
         </div> 
         <div id="mainEl">
             <div id="input">
