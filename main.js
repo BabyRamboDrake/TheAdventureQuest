@@ -68,7 +68,7 @@ function switchMode(mode) {
     let { total } = timer.remainingTime;
     const endTime = Date.parse(new Date()) + total * 1000;
   
-    let account = 0; // initialize account balance
+    let account = 3334; // initialize account balance
   
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
