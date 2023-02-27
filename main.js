@@ -105,7 +105,7 @@ function switchMode(mode) {
     }, 1000);
   
     const accountInterval = setInterval(function() {
-      if (mainButton.dataset.action === 'stop') {
+      if (mainButton.dataset.action === 'stop' && timer.mode === 'pomodoro') {
         account += 466/60;
         // update the account balance in the UI every minute
         let accountElement = document.getElementById('js-account-balance');
