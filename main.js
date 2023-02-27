@@ -68,7 +68,7 @@ function switchMode(mode) {
     let { total } = timer.remainingTime;
     const endTime = Date.parse(new Date()) + total * 1000;
   
-    let account = 3334; // initialize account balance
+    let account = 0; // initialize account balance
   
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'stop';
@@ -78,8 +78,7 @@ function switchMode(mode) {
       timer.remainingTime = getRemainingTime(endTime);
       updateClock();
   
-      // add 585/60 to the account balance every minute
-      account += 585/60;
+     
   
       total = timer.remainingTime.total;
       if (total <= 0) {
@@ -104,6 +103,7 @@ function switchMode(mode) {
     }, 1000);
   
     setInterval(function() {
+      account += 466/60;
       // update the account balance in the UI every minute
       let accountElement = document.getElementById('js-account-balance');
       accountElement.textContent = account.toFixed(2);
