@@ -16,6 +16,12 @@ addQuestBtn.addEventListener("click", function addQuest() {
     }
 });
 
+questInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+      addQuestBtn.click();
+  }
+});
+
 pullQuestBtn.addEventListener("click", function pullQuest() {
     if (quests.length > 0) {
         let randomIndex = Math.floor(Math.random() * quests.length);

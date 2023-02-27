@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureQuest</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pomodoro.css">
 </head>
 <body>
     <div id="omega">
@@ -26,25 +27,48 @@
                     <button id="complete-quest" onclick="completeQuest()">Complete Quest</button>
                 </div>    
             </div>
-            <div id="timerEl">
-                <div id="timer">
-                    <div id="minutes">00</div>
-                    <div>:</div>
-                    <div id="seconds">00</div>
-                </div>
-                <div id="button-container">
-                    <button type="button" class="timer__btn timer__btn--control timer__btn--start">
-                        <span class="material-symbols-outlined">
-                            play_arrow
-                            </span>
-                    </button>
-                    <button type="button" class="timer__btn timer__btn--reset">
-                        <span class="material-symbols-outlined" id="hourglass">
-                            hourglass_full
-                            </span>
-                    </button>
-                </div>
+            <div id="timer-el">
+                    <div class="timer">
+                      <div class="button-group mode-buttons" id="js-mode-buttons">
+                        <button
+                          data-mode="pomodoro"
+                          class="button active mode-button"
+                          id="js-pomodoro"
+                        >
+                          Questing
+                        </button>
+                        <button
+                          data-mode="shortBreak"
+                          class="button mode-button"
+                          id="js-short-break"
+                        >
+                          Rest
+                        </button>
+                        <button
+                          data-mode="longBreak"
+                          class="button mode-button"
+                          id="js-long-break"
+                        >
+                          Meditate
+                        </button>
+                      </div>
+                      <div class="clock" id="js-clock">
+                        <span id="js-minutes">25</span>
+                        <span class="separator">:</span>
+                        <span id="js-seconds">00</span>
+                      </div>
+                      <button class="main-button" data-action="start" id="js-btn">
+                        Start
+                      </button>
+                    </div>
+                  <div class="hidden">
+                    <audio src="backtowork.mp3" data-sound="pomodoro"></audio>
+                    <audio src="break.mp3" data-sound="shortBreak"></audio>
+                    <audio src="break.mp3" data-sound="longBreak"></audio>
+                  </div>
+                  <script src="main.js"></script>
             </div>
+        
         </div> 
         <div id="mainEl">
             <div id="input">
