@@ -100,7 +100,7 @@ function switchMode(mode) {
   
         document.querySelector(`[data-sound="${timer.mode}"]`).play();
   
-        startTimer();
+        updateClock();
       }
     }, 1000);
   
