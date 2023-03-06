@@ -104,16 +104,16 @@ function switchMode(mode) {
       }
     }, 1000);
   
-    const accountInterval = setInterval(function() {
-      if (mainButton.dataset.action === 'stop' && timer.mode === 'pomodoro') {
-        account += 466/60;
+    //const accountInterval = setInterval(function() {
+      //if (mainButton.dataset.action === 'stop' && timer.mode === 'pomodoro') {
+        //account += 466/60;
         // update the account balance in the UI every minute
-        let accountElement = document.getElementById('js-account-balance');
-        accountElement.textContent = Math.floor(account);
+        //let accountElement = document.getElementById('js-account-balance');
+        //accountElement.textContent = Math.floor(account);
         //save the account balance to localStorage
-        localStorage.setItem('accountBalance', account.toFixed(2));
-      }
-    }, 60000);
+        //localStorage.setItem('accountBalance', account.toFixed(2));
+      //}
+    //}, 60000);
   }
 
   function stopTimer() {
