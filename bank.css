@@ -1,0 +1,147 @@
+
+@font-face {
+    font-family: fantasyfont;
+    src: url(IMG/LifeCraft_Font.ttf);
+}
+
+
+:root {
+
+    --primary:#130d14;
+    --secondary: #0c0221; 
+}
+
+body {
+    font-family: fantasyfont;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.section1, .section2, .section3 {
+    height: 600px;
+    width: 460px;
+    margin: 0px 15px; 
+    padding: 50px 0px 0px 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #14161c;
+    border-radius: 10px;
+    box-shadow: #000000 0px 0px 100px 5px;
+}
+
+h1 {
+    margin: 35px 0px 75px 0px;
+    font-size: 50px;
+}
+
+h2 {
+    margin: 0px 0px 20px 0px;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #555;
+    background-color:  #0b0918;
+    color: #e5e5e5;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: fantasyfont;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-family: fantasyfont;
+}
+
+button:hover {
+    background-color: #4a4a4a;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+#results {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+
+.delete-btn {
+    padding: 5px 10px;
+    background-color: #1e1e1e00;
+    border: #1e1e1e;
+    color: #515151;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c63838;
+    color: white;
+    margin-left: 5px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item-name {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.list-item-name {
+    flex: 1;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.list-item-number {
+    margin-right: 10px;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}

@@ -67,30 +67,33 @@ allocationForm.addEventListener('submit', e => {
 });
 
 function renderExpenses() {
-    expenseList.innerHTML = expenses.map(expense => `
-        <li data-id="${expense.id}">
-            ${expense.name}: $${expense.amount.toFixed(2)}
-            <button onclick="deleteExpense(${expense.id})">Delete</button>
-        </li>
-    `).join('');
+  expenseList.innerHTML = expenses.map(expense => `
+      <li data-id="${expense.id}" class="list-item">
+          <span class="list-item-name">${expense.name}:</span>
+          <span class="list-item-number">${expense.amount.toFixed(2)}</span>
+          <button class="delete-btn" onclick="deleteExpense(${expense.id})">x</button>
+      </li>
+  `).join('');
 }
 
 function renderIncomes() {
-    incomeList.innerHTML = incomes.map(income => `
-        <li data-id="${income.id}">
-            ${income.name}: $${income.amount.toFixed(2)}
-            <button onclick="deleteIncome(${income.id})">Delete</button>
-        </li>
-    `).join('');
+  incomeList.innerHTML = incomes.map(income => `
+      <li data-id="${income.id}" class="list-item">
+          <span class="list-item-name">${income.name}:</span>
+          <span class="list-item-number">${income.amount.toFixed(2)}</span>
+          <button class="delete-btn" onclick="deleteIncome(${income.id})">x</button>
+      </li>
+  `).join('');
 }
 
 function renderAllocations() {
-    allocationList.innerHTML = allocations.map(allocation => `
-        <li data-id="${allocation.id}">
-            ${allocation.name}: ${allocation.percentage.toFixed(2)}%
-            <button onclick="deleteAllocation(${allocation.id})">Delete</button>
-        </li>
-    `).join('');
+  allocationList.innerHTML = allocations.map(allocation => `
+      <li data-id="${allocation.id}" class="list-item">
+          <span class="list-item-name">${allocation.name}:</span>
+          <span class="list-item-number">${allocation.percentage.toFixed(2)}%</span>
+          <button class="delete-btn" onclick="deleteAllocation(${allocation.id})">x</button>
+      </li>
+  `).join('');
 }
 
 function deleteExpense(id) {
@@ -121,20 +124,20 @@ function calculateResults() {
   const netIncome = totalIncome - taxes - totalExpenses;
 
   let resultsHTML = `
-      <p>Total Expenses: $${totalExpenses.toFixed(2)}</p>
-      <p>Total Income: $${totalIncome.toFixed(2)}</p>
-      <p>Taxes: $${taxes.toFixed(2)}</p>
-      <p>Net Income: $${netIncome.toFixed(2)}</p>
+      <p>Total Expenses: ${totalExpenses.toFixed(2)}</p>
+      <p>Total Income: ${totalIncome.toFixed(2)}</p>
+      <p>Taxes: ${taxes.toFixed(2)}</p>
+      <p>Net Income: ${netIncome.toFixed(2)}</p>
   `;
 
   if (netIncome < 0) {
       const additionalAmountNeeded = Math.abs(netIncome) / (1 - 0.3);
-      resultsHTML += `<p>You need to earn an additional $${additionalAmountNeeded.toFixed(2)} (including 30% taxes) to cover your expenses.</p>`;
+      resultsHTML += `<p>Target to cover expenses ${additionalAmountNeeded.toFixed(2)} inc. tax.</p>`;
   } else {
       resultsHTML += `<p>Allocations:</p>`;
       allocations.forEach(allocation => {
           const allocatedAmount = netIncome * (allocation.percentage / 100);
-          resultsHTML += `<p>${allocation.name}: $${allocatedAmount.toFixed(2)}</p>`;
+          resultsHTML += `<p>${allocation.name}: ${allocatedAmount.toFixed(2)}</p>`;
       });
   }
 
