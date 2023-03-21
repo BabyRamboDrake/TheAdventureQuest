@@ -124,20 +124,34 @@ function calculateResults() {
   const netIncome = totalIncome - taxes - totalExpenses;
 
   let resultsHTML = `
-      <p>Total Expenses: ${totalExpenses.toFixed(2)}</p>
-      <p>Total Income: ${totalIncome.toFixed(2)}</p>
-      <p>Taxes: ${taxes.toFixed(2)}</p>
-      <p>Net Income: ${netIncome.toFixed(2)}</p>
+     <div class="results-wrapper">
+        <div class="expense">  
+          <p>Total Expenses:</p><p>${totalExpenses.toFixed(2)}</p>
+        </div>
+        <div class="income">  
+          <p>Total Income:</p><p>${totalIncome.toFixed(2)}</p>
+        </div>
+        <div class="taxes"> 
+          <p>Taxes:</p><p>${taxes.toFixed(2)}</p>
+          </div>
+        <div class="net-income"> 
+          <p>Net Income:</p><p>${netIncome.toFixed(2)}</p>
+        </div>
+      </div> 
   `;
 
   if (netIncome < 0) {
       const additionalAmountNeeded = Math.abs(netIncome) / (1 - 0.3);
-      resultsHTML += `<p>Target to cover expenses ${additionalAmountNeeded.toFixed(2)} inc. tax.</p>`;
+      resultsHTML += `<div class="results-wrapper">
+        <div class="target"
+      <p>Target to cover expenses</p> <p>${additionalAmountNeeded.toFixed(2)} inc. tax.</p>
+        </div>
+      </div>`;
   } else {
-      resultsHTML += `<p>Allocations:</p>`;
+      resultsHTML += `<h2>Allocations:</h2>`;
       allocations.forEach(allocation => {
           const allocatedAmount = netIncome * (allocation.percentage / 100);
-          resultsHTML += `<p>${allocation.name}: ${allocatedAmount.toFixed(2)}</p>`;
+          resultsHTML += `<div class="results-wrapper"><div class="alloc"><p> ${allocation.name}: ${allocatedAmount.toFixed(2)}</p></div></div>`;
       });
   }
 
